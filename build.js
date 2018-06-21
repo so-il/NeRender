@@ -1,2 +1,0 @@
-
-window.neRender = require('./index');
