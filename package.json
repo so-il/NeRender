@@ -1,0 +1,34 @@
+
+{
+  "name": "ne.render",
+  "version": "0.0.1",
+  "description": "Living Template Engine",
+  "keywords": [
+    "template-engine",
+    "virtual-dom"
+  ],
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "gulp build"
+  },
+  "author": "ethan.gor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/so-il/neui.git"
+  },
+  "homepage": "https://nelabs.cn/nesite",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^16.2.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-header": "^2.0.5",
+    "gulp-jshint": "^2.1.0",
+    "gulp-rename": "^1.3.0",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.5",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}
