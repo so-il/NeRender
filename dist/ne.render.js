@@ -108,7 +108,8 @@ function isSelfClosingTAG(tag) {
     var selfClosingTAGs = ['br', 'hr', 'img', 'input', 'link', 'meta', 'base', 'param', 'area', 'col',
         'command', 'embed', 'keygen', 'source', 'track', 'wbr'
     ];
-    return selfClosingTAGs.indexOf(tag) === 0;
+    var flag=selfClosingTAGs.indexOf(tag) >= 0;
+    return flag;
 }
 
 function parseJST(line) {
@@ -328,12 +329,14 @@ function toElement(node) {
         }
     });
     node.children.forEach(function (child) {
-        if (!child.tag) {
-            child = document.createTextNode(child);
-        } else {
-            child = toElement(child);
+        if(child){
+            if (!child.tag) {
+                child = document.createTextNode(child);
+            } else {
+                child = toElement(child);
+            }
+            el.appendChild(child);
         }
-        el.appendChild(child);
     });
     return el;
 }
@@ -984,10 +987,12 @@ function toVirtualDOM(node) {
     }
   });
   node.children.forEach(function (c, i) {
-    if(c.tag){
-      children.push(toVirtualDOM(c));
-    }else{
-      children.push(c);
+    if(c){
+      if(c.tag){
+        children.push(toVirtualDOM(c));
+      }else{
+        children.push(c);
+      }
     }
   });
   return svd.el(tagName, props, children);
