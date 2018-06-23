@@ -15,9 +15,9 @@
   "author": "ethan.gor",
   "repository": {
     "type": "git",
-    "url": "https://github.com/so-il/neui.git"
+    "url": "https://github.com/so-il/nerender.git"
   },
-  "homepage": "https://nelabs.cn/nesite",
+  "homepage": "https://github.com/so-il/nerender.git",
   "license": "MIT",
   "devDependencies": {
     "browserify": "^16.2.2",
